@@ -126,6 +126,7 @@ function init() {
                     employeeCards.push(managerCard(managerHtml));
                     moreEmployees();
                 });
+            //if you choose Engineer as your role go threw the Engineer questions
             } else if (roleAnswer.role === "Engineer") {
                 console.log(roleAnswer.role);
                 inquirer.prompt(engineerQuestions)
@@ -134,6 +135,7 @@ function init() {
                     employeeCards.push(engineerCard(engineerHtml));
                     moreEmployees();
                 });
+            //if you choose Intern as your role go threw the Intern questions
             } else if (roleAnswer.role === "Intern") {
                 console.log(roleAnswer.role);
                 inquirer.prompt(internQuestions)
@@ -150,6 +152,7 @@ function init() {
 
 init();
 
+// function for adding more employees
 function moreEmployees () {
     inquirer.prompt ([{
         type: "confirm",
@@ -158,8 +161,10 @@ function moreEmployees () {
         default: true,
     }])
     .then((answer) => {
+        //if you do want to add more employees
         if (answer.moreEmployees) {
             init();
+        //if you don't want to add more employees
         } else {
             htmlBuild();
         }
