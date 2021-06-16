@@ -19,12 +19,12 @@ const managerQuestions = [
     {
         type: "input",
         name: "name",
-        message: "What is the managers name?",
+        message: "What is the manager's name?",
         validate: nameInput => {
             if (nameInput) {
                 return true;
             } else {
-                console.log("Please enter the manager' name.");
+                console.log("Please enter the manager's name.");
                 return false;
             }
         }
@@ -45,3 +45,35 @@ const managerQuestions = [
         message: "What is the manager's office number?"
     }
 ];
+
+const engineerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the engineer's name?",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter the manager's name.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the engineer's ID?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the engineer's email?"
+    },
+    {
+        type: "input",
+        name: "gitHub",
+        message: "What is the engineer's GitHub username?"
+    }
+];
+
