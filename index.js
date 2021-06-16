@@ -15,3 +15,33 @@ const roleQuestion = [
     }
 ];
 
+const managerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the managers name?",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter the manager' name.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the manager's ID?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the manager's email?"
+    },
+    {
+        type: "input",
+        name: "officeNumber",
+        message: "What is the manager's office number?"
+    }
+];
