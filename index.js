@@ -77,3 +77,33 @@ const engineerQuestions = [
     }
 ];
 
+const internQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the intern's name?",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter the intern's name.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the intern's ID?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is the intern's email?"
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What is the intern's school name?"
+    }
+];
