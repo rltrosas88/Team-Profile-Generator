@@ -1,12 +1,14 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
 
-//const Employee = require("./lib/Employee");
+const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
-//const Engineer = require("./lib/Engineer");
-//const Intern = require("./lib/Intern");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 const managerCard = require("./src/html");
+const engineerCard = require("./src/html");
+const internCard = require("./src/html");
 
 const roleQuestion = [
     {
@@ -124,9 +126,26 @@ function init() {
                     employeeCards.push(managerCard(managerHtml));
                     moreEmployees();
                 });
-            };
-        });
-};
+            } else if (roleAnswer.role === "Engineer") {
+                console.log(roleAnswer.role);
+                inquirer.prompt(engineerQuestions)
+                .then(function (engineerAnswers) {
+                    const engineerHtml = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.gitHub);
+                    employeeCards.push(engineerCard(engineerHtml));
+                    moreEmployees();
+                });
+            } else if (roleAnswer.role === "Intern") {
+                console.log(roleAnswer.role);
+                inquirer.prompt(internQuestions)
+                .then(function (internAnswers) {
+                    const internHtml = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
+                    employeeCards.push(internCard(internHtml));
+                    moreEmployees();
+                });
+
+            }
+    });
+}
 
 
 init();
